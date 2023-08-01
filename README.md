@@ -10,8 +10,10 @@ The main areas will be:
 
 The initial tech will be:
 
+- Azure cloud
 - ASP.NET Core running on a Linux container
 - Data storage will be Azure SQL Database
 - Azure Maps
 - Azure Bicep for IaC
 - Azure DevOps repos & pipelines for CI/CD
+- Azure Key Vault for secrets management
