@@ -22,18 +22,20 @@ The initial tech will be:
 
 ## Deployment
 
-Install the Azure CLI
+[Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
-Install the Bicep module
+Bicep commands are part of the Azure CLI. To validate, run: az bicep version
 
-Install Windows Terminal
+[Install Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install). Windows Terminal offers a modern experience to the command-line.
+
+Download the code repository.
 
 Open Windows Terminal
 
-Navigate to root of the git repo
+Navigate to root of the local git repo.
 
-az login
+Run: az login
 
-az deployment sub create --template-file .\infra-as-code\main.bicep --location 'eastus'
+Run: az deployment sub create --template-file .\infra-as-code\main.bicep --location 'eastus'
 
 Tip: Use the --what-if parameter to validate the deployment without creatiung anything
