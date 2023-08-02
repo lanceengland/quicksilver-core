@@ -1,5 +1,7 @@
 # Quicksilver
 
+## Overview
+
 This project is a client/service application called Quicksilver, a courier company. The application is for scheduling, cancelling, and tracking items for delivery.
 
 The main areas will be:
@@ -17,3 +19,21 @@ The initial tech will be:
 - Azure Bicep for IaC
 - Azure DevOps repos & pipelines for CI/CD
 - Azure Key Vault for secrets management
+
+## Deployment
+
+Install the Azure CLI
+
+Install the Bicep module
+
+Install Windows Terminal
+
+Open Windows Terminal
+
+Navigate to root of the git repo
+
+az login
+
+az deployment sub create --template-file .\infra-as-code\main.bicep --location 'eastus'
+
+Tip: Use the --what-if parameter to validate the deployment without creatiung anything
