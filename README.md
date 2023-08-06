@@ -4,11 +4,11 @@
 
 This project is a client/service application called Quicksilver, a courier company. The application is for scheduling, cancelling, and tracking items for delivery.
 
-The main areas will be:
+The main areas are seperate repositories:
 
-1. quicksilver-backend: An API and database for using the service
+1. [quicksilver-backend](https://github.com/lanceengland/quicksilver-backend): An API and database for using the service
 2. quuicksilver-frontend: A sample client application that uses the API
-3. quicksilver-core: Infrastructure as code (IaC) as Azure Bicep files for core resources to be created and then referenced, but not part of continuous delivery (CD).
+3. [quicksilver-core](https://github.com/lanceengland/quicksilver-core): Infrastructure as code (IaC) as Azure Bicep files for core resources to be created and then referenced, but not part of continuous delivery (CD).
 
 The initial tech will be:
 
