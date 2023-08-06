@@ -6,15 +6,15 @@ This project is a client/service application called Quicksilver, a courier compa
 
 The main areas will be:
 
-- An API for using the service
-- A sample client application that uses the API
-- Infrastructure as code (IaC), repos, and continuous integration/continuous delivery (CI/CD)
+1. quicksilver-backend: An API and database for using the service
+2. quuicksilver-frontend: A sample client application that uses the API
+3. quicksilver-core: Infrastructure as code (IaC) as Azure Bicep files for core resources to be created and then referenced, but not part of continuous delivery (CD).
 
 The initial tech will be:
 
 - Azure cloud
 - ASP.NET Core running on a Linux container
-- Data storage will be Azure SQL Database
+- Data storage in Azure SQL Database
 - Azure Maps
 - Azure Bicep for IaC
 - Azure DevOps repos & pipelines for CI/CD
@@ -22,20 +22,26 @@ The initial tech will be:
 
 ## Deployment
 
-[Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+### Prerequisites
 
-Bicep commands are part of the Azure CLI. To validate, run: az bicep version
+An Azure subscription.
 
 [Install Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install). Windows Terminal offers a modern experience to the command-line.
 
-Download the code repository.
+[Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
 
-Open Windows Terminal
+Bicep commands are part of the Azure CLI. To validate, run: az bicep version
 
-Navigate to root of the local git repo.
+### Quicksilver-core
+
+Open Windows Terminal.
+
+Clone the [quicksilver-core](https://github.com/lanceengland/quicksilver-core) repository.
 
 Run: az login
 
-Run: az deployment sub create --template-file .\infra-as-code\main.bicep --location 'eastus'
+Run: az deployment sub create --template-file main.bicep --location 'eastus'
 
-Tip: Use the --what-if parameter to validate the deployment without creatiung anything
+Tip: Use the --what-if parameter to validate the deployment without creating anything
+
+This will deploy a resource

@@ -8,10 +8,11 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   location: location
 }
 
-module mapAcct 'azuremap.bicep' = {
+module mapAcct 'azuremaps.bicep' = {
   scope: rg
   name: 'mymapacct'
   params: {
+    name: 'quicksilver-maps'
     location: location
   }
 }

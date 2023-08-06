@@ -1,10 +1,13 @@
+param name string
 param location string
+param kind string = 'Gen1'
+param skuName string = 'S0'
 
 resource mapAcct 'Microsoft.Maps/accounts@2021-12-01-preview' = {
-  name: 'myMapAcct'
+  name: name
   location: location
-  kind: 'Gen1'
+  kind: kind
   sku: {
-    name: 'S0'
+    name: skuName
   }
 }
