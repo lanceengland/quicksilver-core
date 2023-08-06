@@ -44,4 +44,7 @@ Run: az deployment sub create --template-file main.bicep --location 'eastus'
 
 Tip: Use the --what-if parameter to validate the deployment without creating anything
 
-This will deploy a resource
+This will deploy the following:
+
+- A resource group
+- An Azure Maps account
