@@ -2,12 +2,12 @@
 
 ## Overview
 
-This project is a client/service application called Quicksilver, a courier company. The application is for scheduling, cancelling, and tracking items for delivery.
+This is a portfolio project for a client/service application called Quicksilver, a [fictional](https://www.imdb.com/title/tt0091814/) courier company. The application is for scheduling, canceling, and tracking items for delivery.
 
 The main areas are seperate repositories:
 
 1. [quicksilver-backend](https://github.com/lanceengland/quicksilver-backend): An API and database for using the service
-2. quuicksilver-frontend: A sample client application that uses the API
+2. [quicksilver-frontend](https://github.com/lanceengland/quuicksilver-frontend): A sample client application that uses the API
 3. [quicksilver-core](https://github.com/lanceengland/quicksilver-core): Infrastructure as code (IaC) as Azure Bicep files for core resources to be created and then referenced, but not part of continuous delivery (CD).
 
 The initial tech will be:
@@ -17,7 +17,7 @@ The initial tech will be:
 - Data storage in Azure SQL Database
 - Azure Maps
 - Azure Bicep for IaC
-- Azure DevOps repos & pipelines for CI/CD
+- GitHub for source control, GitHUb Actions for CI/CD
 - Azure Key Vault for secrets management
 
 ## Deployment
@@ -46,5 +46,6 @@ Tip: Use the --what-if parameter to validate the deployment without creating any
 
 This will deploy the following:
 
-- A resource group
-- An Azure Maps account
+- Resource group
+- Azure Maps account
+- Azure Key Vault
