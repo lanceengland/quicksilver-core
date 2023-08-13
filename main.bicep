@@ -1,30 +1,34 @@
-targetScope = 'subscription'
+param location string = resourceGroup().location
 
-param resourceGroupName string = 'quicksilver-core-rg'
-param location string = deployment().location
+@description('The administrator username of the SQL logical server.')
+param administratorLogin string
 
-resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
-  name: resourceGroupName
-  location: location
-}
+@description('The administrator password of the SQL logical server.')
+@secure()
+param administratorLoginPassword string
 
 // why name prop and name param?
 module mapAcct 'azuremaps.bicep' = {
   name: 'quicksilver-maps'
-  scope: rg
   params: {
     name: 'quicksilver-maps'
     location: location
   }
 }
 
-// why name prop and name param?
-module keyVault 'keyvault.bicep' = {
-  name: 'quicksilver-core-KeyVault2'
-  scope: rg
+// module keyVault 'keyvault.bicep' = {
+//   name: 'quicksilver-core-KeyVault-module'
+//   params: {
+//     location: location
+//     name: 'quicksilver-core-kv'
+//   }
+// }
+
+module sqlServer 'sqlserver.bicep' = {
+  name: 'le-sqlsrv02-module'
   params: {
     location: location
-    name: 'quicksilver-core-KeyVault'
+    administratorLogin: administratorLogin
+    administratorLoginPassword: administratorLoginPassword
   }
 }
-

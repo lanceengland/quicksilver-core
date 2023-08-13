@@ -40,12 +40,20 @@ Clone the [quicksilver-core](https://github.com/lanceengland/quicksilver-core) r
 
 Run: az login
 
-Run: az deployment sub create --template-file main.bicep --location 'eastus'
+Run: $json = ((az ad signed-in-user show) -join '')
+
+Run: $obj = ConvertFrom-Json $json
+
+Run: az group create --name quicksilver-rg --location eastus
+
+Run: az deployment group create --resource-group quicksilver-rg --template-file main.bicep
 
 Tip: Use the --what-if parameter to validate the deployment without creating anything
 
 This will deploy the following:
 
-- Resource group
 - Azure Maps account
 - Azure Key Vault
+- SQL Server
+
+It's a work in progress.
